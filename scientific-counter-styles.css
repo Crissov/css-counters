@@ -23,17 +23,18 @@
 @counter-style element-symbols {
   system: fixed;
   range: 1 118;
-  symbols: 'H',                                                                                                  'He',
-           'Li', 'Be',                                                             'B',  'C',  'N',  'O',  'F',  'Ne', 
-           'Na', 'Mg',                                                             'Al', 'Si', 'P',  'S',  'Cl', 'Ar',
-           'K',  'Ca', 'Sc', 'Ti', 'V',  'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 
-           'Rb', 'Sr', 'Y',  'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I',  'Xe',
-           'Cs', 'Ba',      /*
-                    */ 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu', /*
-                          */ 'Hf', 'Ta', 'W',  'Re', 'Se', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 
-           'Fr', 'Ra',      /*
-                    */ 'Ac', 'Th', 'Pa', 'U',  'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr', /*
-                          */ 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt', 'Ds', 'Rg', 'Cn', 'uut','Fl', 'uup','Lv', 'uus','uuo';
+  speak-as: spell-out;
+  symbols: 'H'                                                                                  'He'
+           'Li' 'Be'                                                   'B'  'C'  'N'  'O'  'F'  'Ne' 
+           'Na' 'Mg'                                                   'Al' 'Si' 'P'  'S'  'Cl' 'Ar'
+           'K'  'Ca' 'Sc' 'Ti' 'V'  'Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Kr' 
+           'Rb' 'Sr' 'Y'  'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I'  'Xe'
+           'Cs' 'Ba' 'La' /*
+                        */'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' /*
+                       */ 'Hf' 'Ta' 'W'  'Re' 'Se' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 
+           'Fr' 'Ra' 'Ac' /*
+                        */'Th' 'Pa' 'U'  'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No' 'Lr' /*
+                       */ 'Rf' 'Db' 'Sg' 'Bh' 'Hs' 'Mt' 'Ds' 'Rg' 'Cn' 'uut' 'Fl' 'uup' 'Lv' 'uus' 'uuo';
 }
 /**
  * `element-symbols-boxed`
@@ -64,7 +65,7 @@
 @counter-style planets {
   system: fixed;
   range: 1 8;
-  symbols: '\263F', '\2640', '\2641', '\2642', '\2643', '\2644', '\2645', '\2646';
+  symbols: '\263F' '\2640' '\2641' '\2642' '\2643' '\2644' '\2645' '\2646';
 }
 /**
  * `solar-system` unlike `planets` includes Sun ☼ and Pluto ♇
@@ -72,7 +73,7 @@
 @counter-style solar-system {
   system: fixed;
   range: 0 9;
-  symbols: '\263C', '\263F', '\2640', '\2641', '\2642', '\2643', '\2644', '\2645', '\2646', '\2647';
+  symbols: '\263C' '\263F' '\2640' '\2641' '\2642' '\2643' '\2644' '\2645' '\2646' '\2647';
 }
 
 /** 
@@ -92,7 +93,33 @@
 @counter-style week-days {
   system: cyclic;
   range: 0 6;
-  symbols: '\2609', '\263D', '\2642', '\263F', '\2643', '\2640', '\2644';
+  speak-as:  week-days-english;
+  symbols: '\2609' '\263D' '\2642' '\263F' '\2643' '\2640' '\2644';
+}
+@counter-style week-days-english {
+  system: cyclic;
+  range: 0 6;
+  speak-as: words;
+  symbols: 'Sunday' 'Monday' 'Tuesday' 'Wednesday' 'Thursday' 'Friday' 'Saturday';
+}
+@counter-style week-days-short-english {
+  system: cyclic;
+  range: 0 6;
+  speak-as:  week-days-english;
+  symbols: 'Sun' 'Mon' 'Tue' 'Wed' 'Thu' 'Fri' 'Sat';
+  /*symbols: 'Su' 'Mo' 'Tu' 'We' 'Th' 'Fr' 'Sa';*/
+}
+@counter-style week-days-german {
+  system: cyclic;
+  range: 1 7;
+  speak-as: words;
+  symbols: 'Montag' 'Dienstag' 'Mittwoch' 'Donnerstag' 'Freitag' 'Samstag' 'Sonntag';
+}
+@counter-style week-days-short-german {
+  system: cyclic;
+  range: 1 7;
+  speak-as: week-days-german;
+  symbols: 'Mo' 'Di' 'Mi' 'Do' 'Fr' 'Sa' 'So';
 }
 
 /**
@@ -117,12 +144,38 @@
 @counter-style astronomic-months {
   system: cyclic;
   range: 1 12;
-  symbols: '\2651', '\2652', '\2653', '\2648', '\2649', '\264A', '\264B', '\264C', '\264D', '\264E', '\264F', '\2650';
+  speak-as: months-english;
+  symbols: '\2651' '\2652' '\2653' '\2648' '\2649' '\264A' '\264B' '\264C' '\264D' '\264E' '\264F' '\2650';
   suffix: '\FE0E'; /* variation selector VS-15 to ensure monochrome text symbols, not colorful emojis */
 }
 @counter-style months {
   system: extends astronomic-months;
   suffix: '\FE0F'; /* variation selector VS-16 to ensure colorful emoji symbols, not monochrome text */
+}
+@counter-style months-english {
+  system: cyclic;
+  range: 1 12;
+  speak-as: words;
+  fallback: decimal;
+  symbols: 'January' 'February' 'March' 'April' 'May' 'June' 'July' 'August' 'September' 'October' 'November' 'December';
+}
+@counter-style months-short-english {
+  system: cyclic;
+  range: 1 12;
+  speak-as: months-english;
+  symbols: 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec';
+}
+@counter-style months-german {
+  system: cyclic;
+  range: 1 12;
+  speak-as: words;
+  symbols: 'Januar' 'Februar' 'März' 'April' 'Mai' 'Juni' 'Juli' 'August' 'September' 'Oktober' 'November' 'Dezember';
+}
+@counter-style months-short-german {
+  system: cyclic;
+  range: 1 12;
+  speak-as: months-german;
+  symbols: 'Jan' 'Feb' 'Mrz' 'Apr' 'Mai' 'Jun' 'Jul' 'Aug' 'Sep' 'Okt' 'Nov' 'Dez';
 }
 
 /**
@@ -149,10 +202,23 @@
 @counter-style astrologic-months {
   system: cyclic;
   range: 1 12;
-  symbols: '\2648', '\2649', '\264A', '\264B', '\264C', '\264D', '\264E', '\264F', '\2650',  '\2651', '\2652', '\2653';
+  symbols: '\2648' '\2649' '\264A' '\264B' '\264C' '\264D' '\264E' '\264F' '\2650'  '\2651' '\2652' '\2653';
   suffix: '\FE0E'; /* variation selector VS-15 to ensure monochrome text symbols, not colorful emojis */
 }
 @counter-style zodiac {
   system: extends astrologic-months;
+  speak-as: zodiac-english;
   suffix: '\FE0F'; /* variation selector VS-16 to ensure colorful emoji symbols, not monochrome text */
+}
+@counter-style zodiac-english {
+  system: cyclic;
+  range: 1 12;
+  speak-as: words;
+  symbols: 'Aries' 'Taurus' 'Gemini' 'Cancer' 'Leo' 'Virgo' 'Libra' 'Scorpius' 'Sagittarius' 'Capricorn' 'Aquarius' 'Pisces';
+}
+@counter-style zodiac-german {
+  system: cyclic;
+  range: 1 12;
+  speak-as: words;
+  symbols: 'Widder' 'Stier' 'Zwillinge' 'Krebs' 'Löwe' 'Jungfrau' 'Waage' 'Skorpion' 'Schütze' 'Steinbock' 'Wassermann' 'Fische';
 }
