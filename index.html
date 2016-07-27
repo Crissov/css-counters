@@ -33,7 +33,12 @@
         </ul>
       </header>
       <section>
-        <p>This repository provides code templates and ideas for custom counter styles in Cascading Stylesheets (CSS) as specified in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. They can be used as list markers, for pagination, footnote markers and several other things, at least in theory. A similar, but official W3C project is <a href="http://w3c.github.io/predefined-counter-styles/">Custom Counter Styles</a> which focuses on internationalization (i18n) of enumerators, i.e. documents existing usage from around the world.</p>
+        <p>This repository provides code templates and ideas for custom counter styles in Cascading Stylesheets (CSS) using <code>@counter-style</code> as specified in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>.
+        This feature has <a href="http://caniuse.com/#feat=css-at-counter-style">very limited support in browsers</a> (only Gecko/Firefox since version 33 as of mid-2016). 
+        Some CSS-to-PDF formatters like <a href="http://www.princexml.com/doc/9.0/counters/">Prince</a>, <a href="http://weasyprint.readthedocs.io/en/latest/features.html#css">Weasyprint</a> and <a href="http://vivliostyle.com/en/about/#secAbout-w3c">Vivliostyle</a> may have proprietary solutions for user-defined counter styles, but <a href="https://www.antennahouse.com/product/ahf63/ahf-ext.html#axf.counter-style">Antenna House Formatter</a> claims almost complete support for the standard.
+        </p><p>
+        Such counter styles can be used as list markers, for pagination, footnote markers and several other things, at least in theory. 
+        A similar, but official W3C project is <a href="http://w3c.github.io/predefined-counter-styles/">Custom Counter Styles</a> which focuses on internationalization (i18n) of enumerators, i.e. it documents existing usage from around the world.</p>
         <nav>
           <li><a href="european-counter-styles.css">Classic European Counter Style Templates</a>, some variants of roman numerals and latin alphabetic labels</li>
           <li><a href="emoji-counter-styles.css">Emoji Counter Style Templates</a>, using colorful picture characters as list markers etc. with styles ranging from playful to serious</li>
