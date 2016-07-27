@@ -1,0 +1,37 @@
+Enclosing Counter Style Templates
+=================================
+
+- **uses**: https://drafts.csswg.org/css-counter-styles/
+- **extends**: https://github.com/w3c/predefined-counter-styles
+- **author**: Christoph Päper bugzilla@crissov.de
+
+    
+    @counter-style lower-latin-in-circle {
+      system: extends lower-latin;
+      suffix: "\20DD "; /* Combining Enclosing Circle */
+    }
+    
+    @counter-style lower-latin-in-square {
+      system: extends lower-latin;
+      suffix: "\20DE "; /* Combining Enclosing Square */
+    }
+    @counter-style lower-latin-in-diamond {
+      system: extends lower-latin;
+      suffix: "\20DF "; /* Combining Enclosing Diamond */
+    }
+    @counter-style lower-latin-in-triangle {
+      system: extends lower-latin;
+      suffix: "\20E4 "; /* Combining Enclosing Upward Pointing Triangle */
+    }
+    @counter-style lower-latin-forbidden {
+      system: extends lower-latin;
+      suffix: "\20E0 "; /* Combining Enclosing Circle Backslash */
+    }
+    @counter-style lower-latin-on-screen {
+      system: extends lower-latin;
+      suffix: "\20E2 "; /* Combining Enclosing Screen */
+    }
+    @counter-style lower-latin-on-key {
+      system: extends lower-latin;
+      suffix: "\20E3 "; /* Combining Enclosing Keycap */
+    }
