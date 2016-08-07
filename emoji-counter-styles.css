@@ -68,7 +68,7 @@
  */
 @counter-style clock-face {
   system: cyclic;
-  symbols: '\1F550', '\1F551', '\1F552', '\1F553', '\1F554', '\1F555', '\1F556', '\1F557', '\1F558', '\1F559', '\1F55A', '\1F55B';
+  symbols: '\1F550' '\1F551' '\1F552' '\1F553' '\1F554' '\1F555' '\1F556' '\1F557' '\1F558' '\1F559' '\1F55A' '\1F55B';
 }
 
 /**
@@ -130,7 +130,7 @@
  */
 @counter-style blood-type {
   system: fixed;
-  symbols: '\1F17E', '\1F170', '\1F171', '\1F172';
+  symbols: '\1F17E' '\1F170' '\1F171' '\1F172';
 }
 
 /**
