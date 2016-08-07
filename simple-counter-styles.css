@@ -1,0 +1,331 @@
+/** 
+ * Single-Symbol Bullet or Affix Counter Styles
+ * ============================================
+ */
+
+/**
+ * `hyphen`
+ *
+ * > ⁃
+ */
+@counter-style hyphen {
+  system: cyclic;
+  symbols: '\2043';
+}
+
+/**
+ * `em-dash`
+ *
+ * > —
+ */
+@counter-style em-dash {
+  system: cyclic;
+  symbols: '\2014';
+}
+
+/**
+ * `en-dash`
+ *
+ * > –
+ */
+@counter-style en-dash {
+  system: cyclic;
+  symbols: '\2013';
+}
+
+
+/**
+ * `bullet`
+ *
+ * > ⁍
+ * @issue `right-bullet` ⁍ and `left-bullet` ⁌?
+ */
+@counter-style bullet {
+  system: cyclic;
+  symbols: '\204D';
+}
+
+/**
+ * `floral-heart`
+ *
+ * > ❧
+ * @issue U+2764 ❤ (see `hearts`) U+2765 ❥ U+2766 ❦ U+2767 ❧
+ */
+@counter-style floral-heart {
+  system: cyclic;
+  symbols: '\2767';
+}
+
+/**
+ * `hand`
+ *
+ * > ☞
+ * @issue white U+261E ☞ or black U+261B ☛ or emoji U+1F449 👉
+ */
+@counter-style hand {
+  system: cyclic;
+  symbols: '\261E';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `bullseye`
+ *
+ * > ◎
+ * @issue 
+ */
+@counter-style bullseye {
+  system: cyclic;
+  symbols: '\25CE';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `fisheye`
+ *
+ * > ◉
+ * @issue 
+ */
+@counter-style fisheye {
+  system: cyclic;
+  symbols: '\25C9';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `circled`
+ *
+ * > ⦿
+ * @issue 
+ */
+@counter-style circled {
+  system: cyclic;
+  symbols: '\29BF';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `sesame`
+ *
+ * > ﹅
+ * > ﹆
+ * @issue black U+FE45 or white U+FE46
+ */
+@counter-style sesame {
+  system: cyclic;
+  symbols: '\FE45';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `section`
+ *
+ * > § 1
+ * @issue 
+ */
+@counter-style section {
+  system: extends decimal;
+  prefix: '\A7 ';
+}
+
+/**
+ * `paragraph`
+ *
+ * > ¶ 1
+ * @issue 
+ */
+@counter-style paragraph {
+  system: extends decimal;
+  prefix: '\B6 ';
+}
+
+/**
+ * `paragraph-sign`
+ *
+ * > Pilcrow Sign U+B6 ¶ or Curved Stem Paragraph Sign Ornament U+2761 ❡
+ * @issue 
+ */
+@counter-style paragraph-sign {
+  system: cyclic;
+  symbols: '\2761';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `numero`
+ *
+ * > № 1
+ */
+@counter-style numero {
+  system: extends decimal;
+  prefix: '\2116 ';
+}
+
+/**
+ * `masculine`
+ *
+ * > 1º
+ */
+@counter-style masculine {
+  system: extends decimal;
+  suffix: '\BA';
+}
+
+/**
+ * `feminine`
+ *
+ * > 1ª
+ */
+@counter-style feminine {
+  system: extends decimal;
+  suffix: '\AA';
+}
+
+/**
+ * `arrowhead`
+ *
+ * > ➤
+ */
+@counter-style arrowhead {
+  system: circular;
+  symbols: '\27A4';
+}
+
+/**
+ * `tiled-diamond`
+ *
+ * > ❖
+ */
+@counter-style tiled-diamond {
+  system: circular;
+  symbols: '\2756';
+}
+
+/**
+ ** Stars, Asterisks and Florettes
+ ** ==============================
+ **
+ ** 4 Spokes or Pointers
+ ** --------------------
+ *       Four  Teardrop-Spoked             Asterisk       U+2722 ✢
+ *       Four   Balloon-Spoked             Asterisk       U+2723 ✣
+ * Heavy Four   Balloon-Spoked             Asterisk       U+2724 ✤
+ *       Four      Club-Spoked             Asterisk       U+2725 ✥
+ *       Four          Pointed             Black Star     U+2726 ✦
+ *       Four          Pointed             White Star     U+2727 ✧
+ *
+ ** 5 Spokes or Pointers (Default Star)
+ ** --------------------
+ *                                         Black Star     U+2605 ★
+ *                                         White Star     U+2606 ☆ 
+ * Medium                                  White Star     U+2B50 ⭐︎
+ *                             Pinwheel          Star     U+272F ✯
+ *                      Stress Outlined    White Star     U+2729 ✩
+ * Circled                                 White Star     U+272A ✪
+ * Open Centre                             Black Star     U+272B ✫
+ * Black Centre                            White Star     U+272C ✬
+ *                             Outlined    Black Star     U+272D ✭,
+ * Heavy                       Outlined    Black Star     U+272E ✮
+ *                                         Black Florette U+273F ✿
+ *                                         White Florette U+2740 ❀
+ *
+ ** 6 Spokes or Pointers (Default Asterisk)
+ ** --------------------
+ *       Six           Pointed             Black Star     U+2736 ✶
+ *       Six          Petalled Black and White   Florette U+273E ✾
+ *             Teardrop-Spoked                   Asterisk U+273B ✻
+ * Heavy       Teardrop-Spoked                   Asterisk U+273D ✽
+ * Open Centre Teardrop-Spoked                   Asterisk U+273C ✼
+ *              Balloon-Spoked                   Asterisk U+2749 ❉
+ *                                               Asterisk U+002A * Operator U+2217 ∗
+ * Heavy                                         Asterisk U+2731 ✱
+ * Open Centre                                   Asterisk U+2732 ✲
+ * Heavy       Teardrop-Spoked Pinwheel          Asterisk U+2743 ❃
+ *
+ ** 8 Spokes or Pointers
+ ** --------------------
+ *       Eight         Pointed             Black Star     U+2734 ✴
+ *       Eight         Pointed Rectilinear Black Star     U+2737 ✷
+ * Heavy Eight         Pointed Rectilinear Black Star     U+2738 ✸
+ *       Eight         Pointed Pinwheel          Star     U+2735 ✵
+ *       Eight Teardrop-Spoked Propeller         Asterisk U+274A ❊
+ * Heavy Eight Teardrop-Spoked Propeller         Asterisk U+274B ❋
+ *       Eight        Petalled Outlined    Black Florette U+2741 ❁
+ *       Eight          Spoked                   Asterisk U+2733 ✳
+ * Circled Open Centre Eight Pointed             Star     U+2742 ❂
+ *
+ ** 12 Spokes or Pointers
+ ** ---------------------
+ *       Twelve        Pointed             Black Star     U+2739 ✹
+ *
+ ** 16 Spokes or Pointers
+ ** --------------------
+ *       Sixteen       Pointed                   Asterisk U+273A ✺
+ *
+ */
+ /**
+  ** Arrow Pointers
+  ** ==============
+  **
+  ** Right-Pointing Arrows
+  ** ---------------------
+  * 
+  * Heavy Wide-Headed Rightwards Arrow U+2794 ➔
+  * Heavy  Rightwards Arrow U+2799 ➙
+  * Drafting Point Rightwards Arrow U+279B ➛
+  * Heavy Round-Tipped Rightwards Arrow U+279C ➜
+  * Triangle-Headed Rightwards Arrow U+279D ➝
+  * Heavy Triangle-Headed Rightwards Arrow U+279E ➞
+  * Dashed Triangle-Headed Rightwards Arrow U+279F ➟
+  * Heavy Dashed Triangle-Headed Rightwards Arrow U+27A0 ➠
+  * Black Rightwards Arrow U+27A1 ➡
+  * Heavy Black Curved Downwards and Rightwards Arrow U+27A5 ➥
+  * Heavy Black Curved Upwards and Rightwards Arrow U+27A6 ➦
+  * Squat Black Rightwards Arrow U+27A7 ➧
+  * Heavy Concave-Pointed Black Rightwards Arrow U+27A8 ➨
+  * Right-Shaded White Rightwards Arrow U+27A9 ➩
+  * Left-Shaded White Rightwards Arrow U+27AA ➪
+  * Back-Tilted Shadowed White Rightwards Arrow U+27AB ➫
+  * Front-Tilted Shadowed White Rightwards Arrow U+27AC➬
+  * Heavy Lower Right-Shadowed White Rightwards Arrow U+27AD ➭
+  * Heavy Upper Right-Shadowed White Rightwards Arrow U+27AE ➮
+  * Notched Lower Right-Shadowed White Rightwards Arrow U+27AF ➯
+  * Notched Upper Right-Shadowed White Rightwards Arrow U+27B1 ➱
+  * Circled Heavy White Rightwards Arrow U+27B2 ➲
+  * White-Feathered Rightwards Arrow U+27B3 ➳
+  * Black-Feathered Rightwards Arrow U+27B5 ➵
+  * Heavy Black-Feathered Rightwards Arrow U+27B8 ➸
+  * Teardrop-Barbed Rightwards Arrow U+27BA ➺
+  * Heavy Teardrop-Shanked Rightwards Arrow U+27BB ➻
+  * Wedge-Tailed Rightwards Arrow U+27BC ➼
+  * Heavy Wedge-Tailed Rightwards Arrow U+27BD ➽
+  * Open-Outlined Rightwards Arrow U+27BE ➾
+  * Long Rightwards Arrow U+27F6 ⟶
+  * Long Rightwards Double Arrow U+27F9 ⟹
+  * Long Rightwards Arrow from Bar U+27FC ⟼
+  * Long Rightwards Double Arrow from Bar U+27BE ⟾
+  * Long Rightwards Squiggle Arrow U+27FF ⟿
+  * Rightwards Two-Headed Arrow U+2905 ⤅
+  * Rightwards Double Arrow from Bar U+2907 ⤇
+  * Rightwards Double Dash Arrow U+290D ⤍
+  * Rightwards Triple Dash Arrow U+290F ⤏
+  * Rightwards Two-Headed Triple Dash Arrow U+2910 ⤐
+  * Rightwards Arrow with Dotted Stem U+2911 ⤑
+  * Rightwards Two-Headed Arrow with Tail U+2916 ⤖
+  * Rightwards Arrow-Tail U+291A ⤚
+  * Rightwards Double Arrow-Tail U+291C ⤜
+  * Rightwards Arrow from Bar to Black Diamond U+2920 ⤠
+  * Wave Arrow Pointing Directly Right U+2933 ⤳
+  * Rightwards Arrow through X U+2947 ⥇
+  * Rightwards Harpoon with Barb Up to Bar U+2953 ⥓
+  * Rightwards Harpoon with Barb Down to Bar U+2957 ⥗
+  * Rightwards Harpoon with Barb Up from Bar U+295B ⥛
+  * Rightwards Harpoon with Barb Down from Bar U+295F ⥟
+  *
+  ** Right-Pointing Arrowheads
+  ** -------------------------
+  *
+  * Three-D Lighted Rightwards Arrowhead U+27A2 ➢
+  * Three-D Bottom-Lighted Rightwards Arrowhead U+27A3 ➣
+  * Black Rightwards Arrowhead U+27A4 ➤
+  */

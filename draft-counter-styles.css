@@ -1,0 +1,422 @@
+/**
+ * `alphabetic-emoji-boxed`
+ *
+ * > 🅰🅱☪🆔📧☦↪♓ℹ🗾🏗🕒♏️🈂🅾🅿♎️♌️♋️✝️⛎♈️🔱❎☢️💤
+ * @issue E, G, J, K, L, N, W, Y, Z
+ */
+@counter-style alphabetic-emoji-boxed {
+  system: alphabetic;
+  speak-as: upper-latin;
+  symbols: '\1F170' '\1F171' '\' '\' '\' '\'
+           '\' '\' '\2139' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' '\';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `spelling-nato`
+ *
+ * ITU, NATO, ICAO
+ *
+ * @issue historical variants
+ */
+@counter-style spelling-nato {
+  system: alphabetic;
+  speak-as: words;
+  symbols: 'Alfa' 'Beta' 'Charlie' 'Delta' 'Echo' 'Foxtrot'
+           'Golf' 'Hotel' 'India' 'Juliett' 'Kilo' 'Lima' 'Mike' 
+           'November' 'Oscar' 'Papa' 'Quebec' 'Romeo' 'Sierra' 
+           'Tango' 'Uniform' 'Victor' 'Whiskey' 'X-Ray' 'Yankee' 'Zulu';
+}
+
+/**
+ * `spelling-nato-emoji`
+ *
+ * ITU, NATO, ICAO
+ * > 🅰 ️🅱 ️🇻🇳😎 🔼 ↩️ 👣
+ * > ⛳️🏌 🏨 🇮🇳 💑 ⚖ 🇵🇪 🎙
+ * > 🗓 🎞 👨 🇨🇦 💏 🏜 
+ * > 💃 💂 ✌️ 🍶 ☠️ 🇺🇸 🤓
+ * @issue Lima=Chile, Quebec=Canada, Oscar=Movie🎦🏆, Kilo=Scales, Zulu=Nerd, Juliett🚺/Romeo🚹, Foxtrot/Tango, November=Calendar🕚
+ */
+@counter-style spelling-nato-emoji {
+  system: alphabetic;
+  speak-as: spelling-nato;
+  symbols: '\1F170' 'Beta' 'Charlie' 'Delta' 'Echo' 'Foxtrot'
+           'Golf' 'Hotel' 'India' 'Juliett' 'Kilo' 'Lima' 'Mike' 
+           'November' 'Oscar' 'Papa' 'Quebec' 'Romeo' 'Sierra' 
+           'Tango' 'Uniform' 'Victor' 'Whiskey' 'X-Ray' 'Yankee' 'Zulu';
+}
+
+/**
+ * `proto-sinaitic-emoji`
+ *
+ *  ox house/floorplan jubilation/window handpalm water snake/fish eye head sun/tooth mark
+ *  🐮🐃🐂🐄♉️ 🏠🏡⬆🛐🗺 ️ 🙌☺️🙋👻/🖼🖥📺 ✋🖐 🌊💧💦♒️🚰 🐍/♓️🐠🐟🐡🐬🐳🐋🎣 👁👀 😀☺️👤😺🤖👽💀☠️🗣🗽🗿 🌞☀️/👄😬🤓👹 ✝️❌❎✖️➕
+ *  => A B E K M N O PR S T
+ * @issue
+ */
+@counter-style proto-sinaitic-emoji {
+  system: alphabetic;
+  speak-as: proto-sinaitic-phonics;
+  symbols: '\1F42E' '\1F3E0' '\1F64C' /*'\1F5BC'*/ 
+           '\270B\FE0F' '\1F30A' '\1F40D' /*'\1F41F'*/ 
+           '\1F441' '\1F5FF' '\2600\FE0F' /*'\1F479'*/ 
+           '\274C\FE0F';
+}
+/**
+ * `proto-sinaitic-phonics`
+ *
+ *  A B E K M N O PR S T
+ * @issue
+ */
+@counter-style proto-sinaitic-phonics {
+  system: alphabetic;
+  speak-as: words;
+  symbols: 'ʾalp' 'bet' 'hll' /*'he'*/ 
+           'kaf' 'mayim' 'hahš' /*'nun'*/ 
+           'ʿen' 'roʾš' 'šimš' /*'šin'*/ 
+           'tãw';
+}
+
+/**
+ * `phoenician-emoji`
+ *
+ * lang: phn-Phnx (language / script)
+ *
+ *  1. U+10900	ʾālep	ox (also measuring tool dividers)	🐮🐃🐂🐄♉️
+ *  2. U+10901	bēt	house	🏠🏡⬆🛐🎪
+ *  3. U+10902	gīml	camel	🐫🐪
+ *  4. U+10903	dālet	door	🚪
+ *  5. U+10904	hē	window	🖼🖥📺
+ *  6. U+10905	wāw	hook	🎣⚓️⛏
+ *  7. U+10906	zayin	weapon	🗡⚔🔫
+ *  8. U+10907	ḥēt	wall, courtyard	🏢🏛🕋⛩🏟🚧
+ *  9. U+10908	ṭēt	wheel	☸️♿️🎡💿📀🏵🚲🔁🔄➰
+ * 10. U+10909	yōd	hand	👋👍👎👊✊☝️👆👇👈👉🖕
+ * 11. U+1090A	kāp	palm (of a hand)	✋🖐
+ * 12. U+1090B	lāmed	goad	🕹🔧🚩📍📌
+ * 13. U+1090C	mēm	water	🌊💧💦♒️🚰
+ * 14. U+1090D	nūn	snake	🐍🐉
+ * 15. U+1090E	sāmek	support	👫👬👭🎗
+ * 16. U+1090F	ʿayin	eye	👁👀👓🕶🙄😳😎😍
+ * 17. U+10910	pē	mouth	👄👅💋
+ * 18. U+10911	ṣādē	hunt	💘♐️🎣
+ * 19. U+10912	qōp	needle eye	📌📍🔒🔑🗝
+ * 20. U+10913	rēš	head	😀☺️👤😺🤖👽💀☠️🗣🗽🗿
+ * 21. U+10914	šīn	tooth	👄😬🤓👹
+ * 22. U+10915	tāw	mark	✝️❌❎✖️➕
+ *
+ * @issue
+ */
+@counter-style phoenician-emoji {
+  system: alphabetic;
+  speak-as: phoenician-phonics;
+  symbols: '\1F42E' '\1F3E0' '\1F64C' /*'\1F5BC'*/ 
+           '\270B\FE0F' '\1F30A' '\1F40D' /*'\1F41F'*/ 
+           '\1F441' '\1F5FF' '\2600\FE0F' /*'\1F479'*/ 
+           '\274C\FE0F';
+}
+/**
+ * `phoenician-phonics`
+ *
+ * @issue
+ */
+@counter-style phoenician-phonics {
+  system: alphabetic;
+  speak-as: words;
+  symbols: 'ʾālep' 'bēt' 'gīml' 'dālet' 'hē'
+           'wāw' 'zayin' 'ḥēt' 'ṭēt' 'yōd' 'kāp'
+           'lāmed' 'mēm' 'nūn' 'sāmek' 'ʿayin'
+           'pē' 'ṣādē' 'qōp' 'rēš' 'šīn' 'tāw';
+}
+
+/**
+ * `acrophonics-animals-english`
+ *
+ * > 
+ * @issue 
+ */
+@counter-style acrophonics-animals-english {
+  system: alphabetic;
+  speak-as: upper-latin; /* spell-out */
+  symbols: '\' /* Ant 🐜, Alligator 🐊, Aurochs 🐃 */
+           '\' /* Bunny 🐰🐇, Bear 🐻, Beef 🐮🐄, Bird 🐦, Boar 🐗, Bee 🐝, Bug 🐛, Bug/Beetle 🐞, Buffalo 🐃, Bull 🐂, Bactrian Camel 🐫*/
+           '\' /* Cat 🐱🐈, Cow/Cattle 🐮 🐄, Chicken 🐔, Chick 🐤🐣🐥, Caterpillar 🐛, Crab/Crustacean/Cancer 🦀, Crocodile 🐊, Camel 🐫🐪, Cock 🐓 */
+           '\' /* Dog 🐶🐕🐩, Dolphin 🐬, Dromedary Camel 🐪, Dove 🕊, Dragon/Drake 🐉🐲 */
+           '\' /* Elephant 🐘 */
+           '\' /* Frog 🐸, Fish 🐠🐟🐡 */
+           '\' /* Gerbil 🐹, Gator 🐊, Goat 🐐*/
+           '\' /* Hamster 🐹, Hare 🐰 🐇, Hen 🐔, Hatchling 🐤🐣🐥, Horse 🐴🐎 */
+           '\' /* I */
+           '\' /* Jaguar */
+           '\' /* Koala 🐨, Kraken 🐙*/
+           '\' /* Lion 🦁, Ladybug 🐞, Leopard 🐆 */
+           '\' /* Mouse 🐭🐁, Monkey 🐒🐵 */
+           '\' /* N */
+           '\' /* Octopus 🐙, Ox 🐂🐃 */
+           '\' /* Panda 🐼, Pig/Pork 🐷🐖, Penguin 🐧, Poodle 🐩 */
+           '\' /* Q */
+           '\' /* Rabbit 🐰 🐇, Rat 🐀, Rooster 🐓 */
+           '\' /* Swine/Sow 🐷🐖, Squid 🐙, Snail/Slug 🐌, Spider 🕷, Scorpion 🦂, Snake 🐍, Sheep 🐏🐑, Squirrel 🐿, Shell 🐚 */
+           '\' /* Teddy 🐻, Tiger 🐯🐅, Turtle/Tortoise 🐢, Turkey 🦃 */
+           '\' /* Unicorn 🦄 */
+           '\' /* V */
+           '\' /* Wolf 🐺, Whale 🐳🐋 */
+           '\' /* X */
+           '\' /* Yak 🐃 */
+           '\' /* Zebra */;
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `acrophonics-animals-german`
+ *
+ * > 
+ * @issue 
+ */
+@counter-style acrophonics-animals-german {
+  system: alphabetic;
+  speak-as: upper-latin; /* spell-out */
+  symbols: '\' /* Ameise 🐜, Affe 🐒🐵, Alligator 🐊, Aurochse 🐃 */
+           '\' /* Bär 🐻, Biene 🐝, Büffel 🐃, Bulle 🐂, Bock 🐏🐑, */
+           '\' /* C */
+           '\' /* Delfin 🐬, Dromedar 🐪, Drache(n) 🐉🐲 */
+           '\' /* Elefant 🐘, Einhorn 🦄 , Eichhörnchen 🐿 */
+           '\' /* Frosch 🐸, Fisch 🐠🐟🐡 */
+           '\' /* Geiß 🐐, Geflügel 🐔, */
+           '\' /* Hund 🐶🐕🐩, Hamster 🐹, Huhn/Henne 🐔, Hahn 🐓, Hase 🐰🐇, Hörnchen 🐿,  */
+           '\' /* I */
+           '\' /* Jaguar */
+           '\' /* Koala(bär) 🐨, Kaninchen 🐰 🐇, Kamel 🐫, Katze 🐱🐈, Kuh 🐮 🐄, Küken 🐤🐣🐥, Krabbe/Krebs 🦀, Krokodil 🐊, Krake 🐙, Käfer 🐞, */
+           '\' /* Löwe 🦁, Leopard 🐆 */
+           '\' /* Maus 🐭🐁, Muschel 🐚, Marienkäfer 🐞,  */
+           '\' /* Nager */
+           '\' /* Oktopus 🐙, Ochse 🐂🐃 */
+           '\' /* Panda(bär) 🐼, Pinguin 🐧, Pudel 🐩, , Pferd 🐴🐎, Pute(r) 🦃 */
+           '\' /* Qualle */
+           '\' /* Ratte 🐀, Raupe 🐛, Rind 🐮🐄, Ross 🐴🐎  */
+           '\' /* Schwein/Sau 🐷🐖, Schnecke 🐌, Spinne 🕷, Skorpion 🦂, Schlange 🐍, Schaf 🐏🐑, Streifenhörnchen 🐿, Schildkröte 🐢,  */
+           '\' /* Teddy(bär) 🐻, Tiger 🐯🐅, Taube 🕊, Truthahn/-huhn 🦃, Tintenfisch 🐙,  */
+           '\' /* Ungeziefer 🐛,  */
+           '\' /* Vogel 🐦,  */
+           '\' /* Wolf 🐺,, Wal 🐳🐋, Wildschwein 🐗,  */
+           '\' /* X */
+           '\' /* Yak 🐃 */
+           '\' /* Ziege 🐐 */;
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * ``
+ *
+ * > 
+ * @issue 
+ */
+@counter-style  {
+  system: alphabetic;
+  symbols: '\' '\' '\' '\' '\' '\'
+           '\' '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' '\';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `counting-rods`
+ *
+ * > Ones: 𝍠 𝍡 𝍢 𝍣 𝍤  𝍥 𝍦 𝍧 𝍨 
+ * > Tens: 𝍩 𝍪 𝍫 𝍬 𝍭  𝍮 𝍯 𝍰 𝍱
+ * @issue 
+ */
+@counter-style counting-rods {
+  system: additive;
+  range: 1 99;
+  symbols:  1 '\1D360',  2 '\1D361',  3 '\1D362',  4 '\1D363',  5 '\1D364', 
+            6 '\1D365',  7 '\1D366',  8 '\1D367',  9 '\1D368', 
+           10 '\1D369', 20 '\1D36A', 30 '\1D36B', 40 '\1D36C', 50 '\1D36D', 
+           60 '\1D36E', 70 '\1D36F', 80 '\1D370', 90 '\1D371';
+}
+
+/**
+ * `military-ranks`
+ *
+ * > 
+ * @issue NATO, army, navy, airforce, …
+ */
+@counter-style  {
+  system: alphabetic;
+  symbols: '\' '\' '\' '\' '\' '\'
+           '\' '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' '\';
+}
+
+/**
+ * `clothing-sizes`
+ *
+ * > 
+ * @issue support arbitrary number of X: S=-, L=+, M=±
+ *        using `fallback`, `range`, `prefix`, `suffix` and `negative` descriptors
+ */
+@counter-style  {
+  system: fixed;
+  symbols: 'XXS' -3, 'XS' -2, '-S' -1,
+           'M' 0,
+           'L' 1, 'XL' 2, 'XXL' 3;
+}
+
+/**
+ * `english-bra-cups`
+ *
+ * > 
+ * @issue 
+ */
+@counter-style  {
+  system: ;
+  symbols: 'A' 'B' 'C' 'D' 'DD' /*…*/;
+}
+
+/**
+ * `compass-bearings`
+ * 4 steps, North-start, Clockwise
+ *
+ * > 🔼 ▶️ 🔽 ◀️
+ * > △ ▷ ▽ ◁
+ * > ▵ ▹ ▿ ◃
+ * > ▴ ▸ ▾ ◂
+ * > ▲ ▶ ▼ ◀
+ * > ? ➢ ⧨ ?
+ * > ? ➣ ⧩ ?
+ * @issue proper symbols?
+ */
+@counter-style  {
+  system: cyclic;
+  symbols: '\1F53C' '\25B6\FE0F' '\1F53D' '\25C0\FE0F';
+}
+
+/**
+ * `compass-bearings-detail`
+ * 8 steps, North-start, Clockwise
+ *
+ * > 🔼 ◥ ▶ ◢️ 🔽 ◣ ◀️ ◤
+ * > ▵ ◹ ▹ ◿ ▿ ◺ ◃ ◸
+ * @issue proper symbols?
+ */
+@counter-style  {
+  system: cyclic;
+  symbols: '\1F53C' '\25E5\FE0F' '\25B6\FE0F' '\25E2\FE0F' '\1F53D' '\25E3\FE0F' '\25C0\FE0F' '\25E4\FE0F';
+}
+
+/**
+ * `compass-bearings-english-letter`
+ * 4 steps, North-start, Clockwise
+ *
+ * > N E S W
+ * @issue more steps?
+ */
+@counter-style  {
+  system: cyclic;
+  symbols: 'N' 'E' 'S' 'W';
+}
+
+/**
+ * `compass-bearings-english`
+ * 4 steps, North-start, Clockwise
+ *
+ * > North East South West
+ * @issue more steps?
+ */
+@counter-style  {
+  system: cyclic;
+  symbols: 'North' 'East' 'South' 'West';
+}
+
+/**
+ * `star-rating`
+ *  
+ * using 5-pointed stars (filled pentagram)
+ *
+ * - Black Star U+2605 ★ : White Star U+2606 ☆
+ * - Circled White Star U+272A ✪ : APL Functional Symbol Circle Star ⍟
+ * - Outlined Black Star U+272D ✭ : Outlined White Star U+269D ⚝
+ * - Glowing Star U+1F31F 🌟 : White Medium Star U+2B50 ⭐
+ * - Black Small Star U+2B51 ⭑ : White Small Star U+2B52 ⭒
+ * - Black Medium Star = Black Small Star ? : White Medium Star U+2B50 ⭐
+ *
+ * > ⭐⭐⭐⭐⭐	⭑⭑⭑⭑⭑	⭑⭑⭑⭑⭑	⭐⭐⭐⭐⭐
+ * > ⭐⭐⭐⭐🌟	⭑⭑⭑⭑⭒	⭑⭑⭑⭑⭐	⭐⭐⭐⭐⭑
+ * > ⭐⭐⭐🌟🌟	⭑⭑⭑	⭒⭒	⭑⭑⭑⭐⭐	⭐⭐⭐⭑⭑
+ * > ⭐⭐🌟🌟🌟	⭑⭑⭒⭒⭒	⭑⭑⭐⭐⭐	⭐⭐⭑⭑⭑
+ * > ⭐🌟🌟🌟🌟	⭑⭒⭒⭒⭒	⭑⭐⭐⭐⭐⭐	⭐⭑⭑⭑⭑
+ * > 🌟🌟🌟🌟🌟	⭒⭒⭒⭒⭒	⭐⭐⭐⭐⭐	⭑⭑⭑⭑⭑
+ * @issue half-star-rating
+ */
+@counter-style star-rating {
+  system: fixed;
+  speak-as: decimal;
+  symbols: '\2B50\FE0F\2B50\FE0F\2B50\FE0F\2B50\FE0F\2B50\FE0F'
+           '\1F31F\2B50\FE0F\2B50\FE0F\2B50\FE0F\2B50\FE0F'
+           '\1F31F\1F31F\2B50\FE0F\2B50\FE0F\2B50\FE0F'
+           '\1F31F\1F31F\1F31F\2B50\FE0F\2B50\FE0F'
+           '\1F31F\1F31F\1F31F\1F31F\2B50\FE0F'
+           '\1F31F\1F31F\1F31F\1F31F\1F31F';
+}
+
+/**
+ * ``
+ *
+ * > 
+ * @issue 
+ */
+@counter-style  {
+  system: alphabetic;
+  symbols: '\' '\' '\' '\' '\' '\'
+           '\' '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' '\';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * ``
+ *
+ * > 
+ * @issue 
+ */
+@counter-style  {
+  system: alphabetic;
+  symbols: '\' '\' '\' '\' '\' '\'
+           '\' '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' 
+           '\' '\' '\' '\' '\' '\' '\';
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `ballot-box`
+ *
+ * > ☒ ☐ ☑︎
+ * @issue does not yet work as intended
+ */
+@counter-style ballot-box {
+  system: additive;
+  additive-symbols: '\2612' -1, '\2610' 0, '\2611' 1;
+  range: -1 1;
+  suffix: '\FE0F'; /* VS-16 */
+}
+
+/**
+ * `ballot`
+ *
+ * > ✗ ✓
+ * > ✘ ✔︎
+ * @issue does not work as intended yet
+ */
+@counter-style ballot {
+  system: numeric;
+  symbols: '\2717' '\2713';
+  /*symbols: '\2718' '\2714';*/
+  suffix: '\FE0F'; /* VS-16 */
+}
