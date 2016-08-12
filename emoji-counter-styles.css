@@ -7,10 +7,10 @@
  */
 
 /** Ideas
-- `pointed-stars`: 4✦✧ 5★✩✪✫✬✭✮✯ 6✶✡ 8✴︎✴✴️✷✵✸ 12✹
-- `pointed-asterisks`:  4✢✣✤✥ 5*⁎∗⊛ ⁑ ⁂ 6✱✲✻✼✽❃❉ 8✳❊❋ 16✺
-- `hand`: –1…+5: –1👎 0✊/👊/👌 1👍 2✌️/👆 3🖖/👉 4🤘/🖕 5🖐/✋/👊
-- `smiley`: –2…+2 –2☹️😟😠😡 –1😕🙁 0😐😑 +1 😀🙂+2😃😍
+ * - `pointed-stars`: 4✦✧ 5★✩✪✫✬✭✮✯ 6✶✡ 8✴︎✴✴️✷✵✸ 12✹
+ * - `pointed-asterisks`:  4✢✣✤✥ 5*⁎∗⊛ ⁑ ⁂ 6✱✲✻✼✽❃❉ 8✳❊❋ 16✺
+ * - `hand`: –1…+5: –1👎 0✊/👊/👌 1👍 2✌️/👆 3🖖/👉 4🤘/🖕 5🖐/✋/👊
+ * - `smiley`: –2…+2 –2☹️😟😠😡 –1😕🙁 0😐😑 +1 😀🙂+2😃😍
 */
 
 /** Decimal
@@ -30,8 +30,8 @@
  * 0. 🂪🂺🃊🃚
  */
 
-/** 
- * Both emoji styles use standard emoji-style keycap digits with U+FE0F ‘Variation Selector-16’ and U+20E3 ‘Combining Enclosing Keycap’. 
+/**
+ * Both emoji styles use standard emoji-style keycap digits with U+FE0F ‘Variation Selector-16’ and U+20E3 ‘Combining Enclosing Keycap’.
  * @issue The suffix variant `keycap-decimal` probably only works properly for single-digit numbers.
  *
  * `emoji-numbers` only supports ten items
@@ -57,14 +57,14 @@
 /**
  * Dozenal / Dodecimal
  * -------------------
- *
+ * 12 items
  */
 
 /**
  * `clock-face` shows full hours on an analog clock face
  * >  🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛
  *
- * @issue start with 0=12 or 1?
+ * @issue start with 1 or 0=12?
  */
 @counter-style clock-face {
   system: cyclic;
@@ -72,9 +72,41 @@
 }
 
 /**
+ * `zodiac-emoji` do *not* use abstracted conventional symbols but picturesque ones
+ * @see `zodiac` etc. in [scientific counter styles](scientific-counter-styles.css)
+ *
+ *   1. April     ♈ Aries (Ram): 🐏 Ram U+1F40F, 🐑 Sheep U+1F411
+ *   2. May       ♉ Taurus (Bull): 🐮 Cow Head U+1F42E, 🐂 Ox U+1F402, 🐃 Water Buffalo U+1F403, 🐄 Cow  U+1F404
+ *   3. June      ♊ Gemini (Twins): 👯  U+1F46F, 👫  U+1F46B, 👬  U+1F46C, 👭  U+1F46D
+ *   4. July      ♋ Cancer (Crab): 🦀 Crab U+1F980
+ *   5. August    ♌ Leo (Lion): 🦁 Lion Head U+1F981
+ *   6. September ♍ Virgo (Virgin): 👰 Bride with Veil U+1F470, 👸 Princess U+1F478, 👧 Girl U+1F467
+ *   7. October   ♎ Libra (Scales/Balance): ⚖ Scales U+2696
+ *   8. November  ♏ Scorpius (Scorpion): 🦂 Scorpion U+1F982
+ *   9. December  ♐ Sagittarius (Archer): 🏹  Bow and Arrow U+1F3F9
+ *  10. January   ♑ Capricorn (Goat): 🐐 Goat U+1F410
+ *  11. February  ♒ Aquarius (Water-bearer): 🏺 Amphora U+1F3FA
+ *  12. March     ♓ Pisces (Fishes): 🐟 Fish U+1F41F, 🐠 U+1F420, 🐬 U+1F42C
+ *
+ * > 🐏 🐮 👯 🦀 🦁 👰 ⚖ 🦂 🏹 🐐 🏺 🐟
+ *
+ * @issue Virgo, Twins, (Capricorn, Aries, Taurus)
+ */
+@counter-style zodiac-emoji {
+  system: cyclic;
+  /*range: 1 12;*/
+  speak-as: zodiac-english;
+  symbols: '\1F40F' '\1F42E' '\1F46F'
+           '\1F980' '\1F981' '\1F470'
+           '\2696\FE0F' '\1F982' '\1F3F9'
+           '\1F410' '\1F3FA' '\1F41F';
+}
+
+/**
  * Hexadecimal
  * -----------
- * 
+ * 16 items
+ *
  * - `hexdecimal-notes` ? 16 ♩ 8 ♪ 4 ♫ 2 ♬ 1 \2269…C
  */
 
@@ -82,55 +114,169 @@
  * Octal
  * ----
  *
- * - `recycling` fixed 1…7: ♳♴♵♶♷♸♹ 
- * - `octal-recycling` numeric \♳♴♵♶♷♸♹ 2673…9 (♺)
- * - `lunar-phase`: \1F311 🌑 \1F312 🌒  \1F313 🌓 \1F314🌔 \1F315 🌕 \1F316 🌖 \1F317 🌗  \1F318 🌘
  * - `cloudy`: \2600 ☀️ \1F324 🌤 \26C5 ⛅️ \1F325 🌥  \2601 ☁️
  */
 
 /**
+ * `lunar-phase` shows eight views of the Moon in a repeating sequence
+ *
+ * > 🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘
+ *
+ * @issue arbitrary start, selected by codepoint
+ * @see `lunar-face`
+ */
+@counter-style lunar-phase {
+  system: cyclic;
+  symbols: '\1F311' '\1F312' '\1F313' '\1F314' '\1F315' '\1F316' '\1F317' '\1F318';
+}
+/**
+ * `recycling` shows seven recycling symbols
+ * `octal-recycling` shows octal numbers within recycling symbols, zero is empty
+ *
+ * > ♳ ♴ ♵ ♶ ♷ ♸ ♹
+ * > ♳ ♴ ♵ ♶ ♷ ♸ ♹ ♳♺ ♳♳ ♳♴ …
+ *
+ * @issue not emoji
+ */
+@counter-style recycling {
+  system: fixed;
+  symbols: '\2673' '\2674' '\2675' '\2676' '\2677' '\2678' '\2679';
+}
+@counter-style octal-recycling {
+  system: numeric;
+  symbols: '\267A' '\2673' '\2674' '\2675' '\2676' '\2677' '\2678' '\2679';
+}
+
+/**
  * Quadrenary / Quadruply?
  * ----------------------
- * 
+ * 4 items
+ *
+ * - `mailbox`: \1F4EA…D: 📪 📫 📬 📭
  * - `notes` ? ♩♪♫♬ \2269…C
- * - `lunar-face`: \1F31A 🌚 \1F31B 🌛 \1F31D 🌝 \1F31C 🌜
  */
+
+/**
+ * `lunar-face` shows four views of the Moon in a repeating sequence
+ *
+ * > 🌚 🌛  🌝  🌜
+ *
+ * @issue arbitrary start, selected by codepoint
+ * @see `lunar-phase`
+ */
+@counter-style lunar-face {
+  system: cyclic;
+  symbols: '\1F31A' '\1F31B' '\1F31D' '\1F31C';
+}
 
 /**
  * Ternary
  * -------
- *
- * - `medal`: gold-silver-bronze, Unicode 9:2016 \1F3C5 🏅
- * - `globe`: \1F30E 🌎 \1F30D 🌍 \1F30F 🌏
+ * 3 items
  */
+
+/**
+ * `medals` shows gold, silver and bronze medals for the first 3 entries and digits else
+ *
+ * > 🥇 🥈 🥉 4. 5. …
+ *
+ * @issue chars new in Unicode 9:2016
+ * @issue fallback to generic sports medal at U+1F3C5 🏅?
+ */
+@counter-style medals {
+  system: fixed;
+  symbols: '\1F947' '\1F948' '\1F949';
+  fallback: decimal;
+}
+
+/**
+ * `globe` shows three views of the Earth in a repeating sequence
+ *
+ * > 🌍  🌎  🌏
+ *
+ * @issue arbitrary start, selected by codepoint
+ * @issue Pacific emoji missing
+ * @see flat map 🗺 U+1F5FA, ideographic globe 🌐 U+1F310
+ */
+@counter-style globe {
+  system: cyclic;
+  symbols: '\1F30D' '\1F30E' '\1F30F';
+}
 
 /**
  * Binary
  * ------
  *
- * - `binary-power`: \2B58 Heavy Circle (= Power Off = 0)  \23FD Power On (= 1)
  * - `braille`, `binary-braille`/`byte`
- * - `beer`: \1F37A 🍺 \1F37B 🍻
- * - `day-night`: \1F31E 🌞 \1F31D 🌝
  */
 
 /**
- * Fixed
- * -----
+ * `day-night` shows Sun and Moon alternating
  *
- * - `colored-hearts`/`hearts`: ❤️💛💚💙💜💝/💖/💘
+ * > 🌞 🌝
+ *
+ * @issue alternative: 🌅/🌄, 🌆, 🏙, 🌇, 🌆, 🌃; moon phase
+ */
+@counter-style day-night {
+  system: cyclic;
+  symbols: '\1F31E' '\1F31D';
+}
+
+/**
+ * `power` shows Off and On alternating
+ * `binary-power` shows Off and On symbols in sequence
+ *
+ * > ⭘ ⏽
+ * > ⭘ ⏽ ⭘⭘ ⭘⏽ ⏽⭘ ⏽⏽
+ *
+ * @issue Power On new in Unicode 9.0:2016; not emoji; Off switch ⏻, On/Off toggle ⏼, Standby ⏾
+ */
+@counter-style power {
+  system: cyclic;
+  symbols: '\2B58' '\23FD';
+}
+@counter-style binary-power {
+  system: alphabetic;
+  symbols: '\2B58' '\23FD';
+}
+
+/**
+ * `beers` shows a number of beer glasses
+ * `alcohol` adds other beverages
+ *
+ * > 🍺 🍻 🍻🍺 🍻🍻  🍻🍻🍺 …
+ *
+ * @issue Power On new in Unicode 9.0:2016; not emoji; Off switch ⏻, On/Off toggle ⏼, Standby ⏾
+ */
+@counter-style beers {
+  system: additive;
+  additive-symbols: 2 '\1F37B', 1 '\1F37A', 0 '\1F377';
+}
+@counter-style alcohol {
+  system: extends beers;
+  additive-symbols: 200 '\1F922', 100 '\1F376', 50 '\1F379', 20 '\1F378', 10 '\1F37E', 2 '\1F37B', 1 '\1F37A', 0 '\1F377';
+}
+
+/**
+ * Fixed / Cyclic
+ * --------------
+ *
+ * - `colored-hearts`/`hearts`: ❤️💛💚💙💜💝/💖/💘 \1F5A4 Black Heart \2661 White Heart Suit
  * - `books`: \1F4D3 📓 \1F4D5 📕  \1F4D7 📗 \1F4D8 📘 \1F4D9 📙 \1F4D4 📔 \1F4D2 📒 \1F4DA 📚 \1F4D6
- * - `mailbox`: \1F4EA…D: 📪 📫 📬 📭
  * - `balls`: \26BD ⚽️ \1F3C0 🏀 \26BE ⚾️ \1F3BE 🎾 \1F3D0 🏐 \1F3B1🎱 \1F3C8 🏈 \1F3C9 🏉
  * - `daily-routine`
  */
+
 /**
  * `blood-type` without Rhesus factor
+ *
  * >  🅾️🅰️🅱️🆎
+ *
+ * @issue Rhesus factor could be used as sign, \2795 ➕ and \2796 ➖
  */
 @counter-style blood-type {
   system: fixed;
-  symbols: '\1F17E' '\1F170' '\1F171' '\1F172';
+  symbols: '\1F17E' '\1F170' '\1F171' '\1F18E';
 }
 
 /**
@@ -138,16 +284,18 @@
  * -----
  *
  * - `playing-cards`
- * - `poker-suits` clubs < diamonds < hearts < spades ♣♢♡♠ \2663…0
- * - `skat-suits` diamonds < hearts < spades < clubs ♢♡♠♣
+ * - `poker-suits` clubs < diamonds < hearts < spades ♣♢♡♠ \2663…0 or emoji ♠️♣️♥️♦️
+ * - `skat-suits` diamonds < hearts < spades < clubs ♢♡♠♣ or emoji ♦️️♥️♠️♣
  * - `poker-cards` by *kicker* value 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K < A
  * - `poker-hands` 5-digits, single-deck
  * - `skat-cards` 7…10 JQKA
  * - `chess-white` fixed ♙♘♗♖♕♔
  * - `chess-black` fixed ♟♞♝♜♛♚
  * - `go`
+ * - `mahjong-tiles`
+ * - `mahjong-suits`
  */
- 
+
 /**
  * Alphabetic
  * ---------
@@ -181,3 +329,144 @@
  * y) 🏅🍸☢️❣️🔧💴💹🔌🈂️
  * z) 💤
  */
+
+/**
+ * `alphabetic-emoji-boxed`
+ *
+ * > 🅰🅱☪🆔📧☦↪♓ℹ🗾🏗🕒♏️🈂🅾🅿♎️♌️♋️✝️⛎♈️🔱❎☢️💤
+ * > 🅰🅱☪🆔☯️⏬↪♓ℹ️⤴️☮️🕒♏️♑️🅾🅿♎️♌️♋️✝️⛎♈️📛❎🈂️♊️
+ * @issue E, G, J, K, L, N, W, Y, Z
+ */
+@counter-style alphabetic-emoji-boxed {
+  system: alphabetic;
+  speak-as: upper-latin;
+  symbols: '\1F170' '\1F171' '\262A' '\1F194' '\262F' '\23EC'
+           '\21AA' '\2653' '\2139' '\2934' '\262E' '\1F552' '\264F'
+           '\2651'/*23F8/23E9/F*/ '\1F17E' '\1F17F' '\264E' '\264C' '\264B'
+           '\271D' '\26CE' '\2648' '\1F4DB' '\274E' '\1F202' '\264A';
+  suffix: '\FE0F '; /* VS-16 */
+}
+
+/**
+ * `spelling-nato`
+ *
+ * ITU, NATO, ICAO
+ *
+ * @issue historical variants
+ */
+@counter-style spelling-nato {
+  system: alphabetic;
+  speak-as: words;
+  symbols: 'Alfa' 'Beta' 'Charlie' 'Delta' 'Echo' 'Foxtrot'
+           'Golf' 'Hotel' 'India' 'Juliett' 'Kilo' 'Lima' 'Mike'
+           'November' 'Oscar' 'Papa' 'Quebec' 'Romeo' 'Sierra'
+           'Tango' 'Uniform' 'Victor' 'Whiskey' 'X-Ray' 'Yankee' 'Zulu';
+}
+/**
+ * `spelling-nato-emoji`
+ *
+ * ITU, NATO, ICAO
+ * > 🅰 ️🅱 ️🇻🇳 🔼 ↩️ 👣
+ * > ⛳️ 🏨 🇮🇳 🚺 ⚖ 🇵🇪 🎙
+ * > 🗓 🎞 👨 🇨🇦 🚹 🏜
+ * > 💃 💂 ✌️ 🍶 ☠️ 🇺🇸 🤓
+ * @issue Lima=>Chile, Quebec=>Canada, Oscar=>Movie, Kilo=>Scales, Zulu=>Nerd, Juliett/Romeo, Foxtrot/Tango, November=>Calendar
+ */
+@counter-style spelling-nato-emoji {
+  system: alphabetic;
+  speak-as: spelling-nato;
+  symbols: '\1F170\FE0F' '\1F171\FE0F' '\1F1FB\1F1F3'/*'\1F60E'😎*/ '\1F53C' '\21A9\FE0F' '\1F463'
+        /* 'Alfa'        'Beta'        'Charlie'                    'Delta'  'Echo'       'Foxtrot' */
+           '\26F3\FE0F'/*'\1F3CC'🏌*/ '\1F3E8' '\1F1EE\1F1F3' '\1F6BA'/*'\1F491'💑*/ '\2696\FE0F' '\1F1F5\1F1EA' '\1F399'
+        /* 'Golf'                    'Hotel'  'India'        'Juliett'              'Kilo'       'Lima'         'Mike' */
+           '\1F5D3' '\1F39E'/*'\1F3A6'🎦/'\1F3C6'🏆*/ '\1F468' '\1F1E8\1F1E6' '\1F6B9'/*'\1F48F'💏*/ '\1F3DC'
+        /* 'November' 'Oscar'                        'Papa'   'Quebec'       'Romeo'                'Sierra' */
+           '\1F483' '\1F482' '\270C\FE0F' '\1F376' '\2620\FE0F' '\1F1FA\1F1F8' '\1F9130'
+        /* 'Tango'  'Uniform' 'Victor'    'Whiskey' 'X-Ray'     'Yankee'       'Zulu' */
+}
+
+
+/**
+ * `proto-sinaitic-emoji`
+ *
+ *  ox house/floorplan jubilation/window handpalm water snake/fish eye head sun/tooth mark
+ *  🐮🐃🐂🐄♉️ 🏠🏡⬆🛐🗺 ️ 🙌☺️🙋👻/🖼🖥📺 ✋🖐 🌊💧💦♒️🚰 🐍/♓️🐠🐟🐡🐬🐳🐋🎣 👁👀 😀☺️👤😺🤖👽💀☠️🗣🗽🗿 🌞☀️/👄😬🤓👹 ✝️❌❎✖️➕
+ *  => A B E K M N O PR S T
+ * @issue
+ */
+@counter-style proto-sinaitic-emoji {
+  system: alphabetic;
+  speak-as: proto-sinaitic-phonics;
+  symbols: '\1F42E'/*ox*/ '\1F3E0'/*house*/ '\1F64C'/*celebration*//*'\1F5BC'window*/
+           '\270B\FE0F'/*palm*/ '\1F30A'/*water*/ '\1F40D'/*snake*//*'\1F41F'fish*/
+           '\1F441'/*eye*/ '\1F5FF'/*head*/ '\2600\FE0F'/*sun*//*'\1F479'mouth*/
+           '\274C\FE0F'/*mark*/;
+}
+/**
+ * `proto-sinaitic-phonics`
+ *
+ *  A B E K M N O PR S T
+ * @issue
+ */
+@counter-style proto-sinaitic-phonics {
+  system: alphabetic;
+  speak-as: words;
+  symbols: 'ʾalp' 'bet' 'hll' /*'he'*/
+           'kaf' 'mayim' 'hahš' /*'nun'*/
+           'ʿen' 'roʾš' 'šimš' /*'šin'*/
+           'tãw';
+}
+
+/**
+ * `phoenician-emoji`
+ *
+ * lang: phn-Phnx (language / script)
+ *
+ *  1. U+10900	ʾālep	ox (also measuring tool dividers)	🐮🐃🐂🐄♉️
+ *  2. U+10901	bēt	house	🏠🏡⬆🛐🎪
+ *  3. U+10902	gīml	camel	🐫🐪
+ *  4. U+10903	dālet	door	🚪
+ *  5. U+10904	hē	window	🖼🖥📺
+ *  6. U+10905	wāw	hook	🎣⚓️⛏
+ *  7. U+10906	zayin	weapon	🗡⚔🔫
+ *  8. U+10907	ḥēt	wall, courtyard	🏢🏛🕋⛩🏟🚧
+ *  9. U+10908	ṭēt	wheel	☸️♿️🎡💿📀🏵🚲🔁🔄➰
+ * 10. U+10909	yōd	hand	👋👍👎👊✊☝️👆👇👈👉🖕
+ * 11. U+1090A	kāp	palm (of a hand)	✋🖐
+ * 12. U+1090B	lāmed	goad	🕹🔧🚩📍📌
+ * 13. U+1090C	mēm	water	🌊💧💦♒️🚰
+ * 14. U+1090D	nūn	snake	🐍🐉
+ * 15. U+1090E	sāmek	support	👫👬👭🎗
+ * 16. U+1090F	ʿayin	eye	👁👀👓🕶🙄😳😎😍
+ * 17. U+10910	pē	mouth	👄👅💋
+ * 18. U+10911	ṣādē	hunt	💘♐️🎣
+ * 19. U+10912	qōp	needle eye	📌📍🔒🔑🗝
+ * 20. U+10913	rēš	head	😀☺️👤😺🤖👽💀☠️🗣🗽🗿
+ * 21. U+10914	šīn	tooth	👄😬🤓👹
+ * 22. U+10915	tāw	mark	✝️❌❎✖️➕
+ *
+ * > 🐮 🏠 🐫 🚪 🖼 ⚓️ 🗡 🚧 🏵 👆 ✋ 🚩 💧 🐍 🎗 👁 👄 💘 📍 👤 👹 ❌
+ *
+ * @issue
+ */
+@counter-style phoenician-emoji {
+  system: alphabetic;
+  speak-as: phoenician-phonics;
+  symbols: '\1F42E'/*ox*/ '\1F3E0'/*house*/ '\1F42B'/*camel*/ '\1F6AA'/*door*/ '\1F5BC'/*window*/
+           '\2693\FE0F'/*hook*/ '\1F5E1'/*weapon*/ '\1F6A7'/*wall*/ '\1F3F5'/*wheel*/ '\1F446'/*hand*/ '\270B\FE0F'/*palm*/
+           '\1F6A9'/*goad*/ '\1F4A7'/*water*/ '\1F40D'/*snake*/ '\1F397'/*support*/ '\1F441'/*eye*/
+           '\1F444'/*mouth*/ '\1F498'/*hunt*/ '\1F4CD'/*needle eye*/ '\1F464'/*head*/ '\1F479'/*tooth*/ '\274C\FE0F' /* mark*/;
+}
+/**
+ * `phoenician-phonics`
+ *
+ * @issue
+ */
+@counter-style phoenician-phonics {
+  system: alphabetic;
+  speak-as: words;
+  symbols: 'ʾālep' 'bēt' 'gīml' 'dālet' 'hē'
+           'wāw' 'zayin' 'ḥēt' 'ṭēt' 'yōd' 'kāp'
+           'lāmed' 'mēm' 'nūn' 'sāmek' 'ʿayin'
+           'pē' 'ṣādē' 'qōp' 'rēš' 'šīn' 'tāw';
+}

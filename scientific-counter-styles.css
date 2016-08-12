@@ -1,4 +1,4 @@
-/** 
+/**
  *  Scientific Counter Style Templates
  *  ==================================
  *
@@ -7,20 +7,20 @@
  *  @author Christoph Päper bugzilla@crissov.de
  */
 
-/** 
+/**
  *  Physics and Chemistry
  *  ---------------------
  */
 
 /**
  * ### To do
- * - `si-prefixes`: k, M, G, T, E … standalone with or without ^- prefixes; 
+ * - `si-prefixes`: k, M, G, T, E … standalone with or without ^- prefixes;
  *   use `system: extends si-prefixes;` for your favorite unit, e.g. `suffix: 'g'` for gram.
  */
 
 /**
  * `signed-decimal`
- * 
+ *
  * minus sign `−` U+2212 and mandatory plus sign `+`
  * @issue plus-minus zero? U+00B1 `±`
  */
@@ -28,26 +28,26 @@
   system: extends decimal;
   negative: '\2212' '.';
   prefix: '+';
-  suffix: '.'
+  suffix: '. '
 }
 
 
-/** 
+/**
  * `element-symbols`
- * Who wouldn’t want to use these for pagination of their physics or chemistry thesis? 
+ * Who wouldn’t want to use these for pagination of their physics or chemistry thesis?
  */
 @counter-style element-symbols {
   system: fixed;
   range: 1 118;
   speak-as: spell-out;
   symbols: 'H'                                                                                  'He'
-           'Li' 'Be'                                                   'B'  'C'  'N'  'O'  'F'  'Ne' 
+           'Li' 'Be'                                                   'B'  'C'  'N'  'O'  'F'  'Ne'
            'Na' 'Mg'                                                   'Al' 'Si' 'P'  'S'  'Cl' 'Ar'
-           'K'  'Ca' 'Sc' 'Ti' 'V'  'Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Kr' 
+           'K'  'Ca' 'Sc' 'Ti' 'V'  'Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Kr'
            'Rb' 'Sr' 'Y'  'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I'  'Xe'
            'Cs' 'Ba' 'La' /*
                         */'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' /*
-                       */ 'Hf' 'Ta' 'W'  'Re' 'Se' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 
+                       */ 'Hf' 'Ta' 'W'  'Re' 'Se' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn'
            'Fr' 'Ra' 'Ac' /*
                         */'Th' 'Pa' 'U'  'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No' 'Lr' /*
                        */ 'Rf' 'Db' 'Sg' 'Bh' 'Hs' 'Mt' 'Ds' 'Rg' 'Cn' 'uut' 'Fl' 'uup' 'Lv' 'uus' 'uuo';
@@ -56,13 +56,13 @@
  * `element-symbols-boxed`
  *
  * @issue Would be cooler with enclosing square U+20DE, circle U+20DD, diamond U+20DF, triangle U+20E4 or keycap U+20E3,
- * but not sure how to do for 2 (or even 3) characters. 
+ * but not sure how to do for 2 (or even 3) characters.
  * Circle could be faked with parentheses affixes plus U+0361 and U+035C perhaps, and square with brackets and U+035E + U+35F.
  */
 @counter-style element-symbols-boxed {
   system: extends element-symbols;
   prefix: '[';
-  suffix: ']'; /* \20DE */
+  suffix: '] '; /* \20DE */
 */
 
 /**
@@ -73,14 +73,14 @@
  * Both are the base for calendars.
  */
 
-/** 
+/**
  * `planets` without dwarf planets
  *
- * Mercury ☿, Venus ♀, Earth ♁, Mars ♂, Jupiter ♃, Saturn ♄, Uranus ♅, Neptune ♆ 
+ * Mercury ☿, Venus ♀, Earth ♁, Mars ♂, Jupiter ♃, Saturn ♄, Uranus ♅, Neptune ♆
  */
 @counter-style planets {
   system: fixed;
-  range: 1 8;
+/*  range: 1 8;*/
   symbols: '\263F' '\2640' '\2641' '\2642' '\2643' '\2644' '\2645' '\2646';
 }
 /**
@@ -88,11 +88,11 @@
  */
 @counter-style solar-system {
   system: fixed;
-  range: 0 9;
+/*  range: 0 9;*/
   symbols: '\263C' '\263F' '\2640' '\2641' '\2642' '\2643' '\2644' '\2645' '\2646' '\2647';
 }
 
-/** 
+/**
  * `week-days`
  * @link https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week
  *
@@ -101,45 +101,45 @@
  *  3. Wednesday ☿ U+263F Mercury
  *  4. Thursday  ♃ U+2643 Jupiter
  *  5. Friday    ♀ U+2640 Venus
- *  6. Saturday  ♄ U+2644 Saturn 
+ *  6. Saturday  ♄ U+2644 Saturn
  *  7. Sunday    ☉ U+2609 Sun, variant: ☼ U+263C
  *
  *  @issue Since the Sun symbol is defined for 0, it should also appear for 7, but not tested yet!
  */
 @counter-style week-days {
   system: cyclic;
-  range: 0 6;
+  /* range: 0 6; */
   speak-as:  week-days-english;
   symbols: '\2609' '\263D' '\2642' '\263F' '\2643' '\2640' '\2644';
 }
 @counter-style week-days-english {
   system: cyclic;
-  range: 0 6;
+  /* range: 0 6; */
   speak-as: words;
   symbols: 'Sunday' 'Monday' 'Tuesday' 'Wednesday' 'Thursday' 'Friday' 'Saturday';
 }
 @counter-style week-days-short-english {
   system: cyclic;
-  range: 0 6;
+  /* range: 0 6; */
   speak-as:  week-days-english;
   symbols: 'Sun' 'Mon' 'Tue' 'Wed' 'Thu' 'Fri' 'Sat';
   /*symbols: 'Su' 'Mo' 'Tu' 'We' 'Th' 'Fr' 'Sa';*/
 }
 @counter-style week-days-german {
   system: cyclic;
-  range: 1 7;
+  /* range: 1 7; */
   speak-as: words;
   symbols: 'Montag' 'Dienstag' 'Mittwoch' 'Donnerstag' 'Freitag' 'Samstag' 'Sonntag';
 }
 @counter-style week-days-short-german {
   system: cyclic;
-  range: 1 7;
+  /* range: 1 7; */
   speak-as: week-days-german;
   symbols: 'Mo' 'Di' 'Mi' 'Do' 'Fr' 'Sa' 'So';
 }
 
 /**
- * `astronomic-months` and `months` are the same except for the suffix 
+ * `astronomic-months` and `months` are the same except for the suffix
  * which should make the former plain text and the latter emoji-style
  *
  * The count begins with Northward solstice, hence Julian/Georgian months.
@@ -195,10 +195,11 @@
 }
 
 /**
- * `astrologic-months` and `zodiac` are the same except for the suffix 
+ * `astrologic-months` and `zodiac` are the same except for the suffix
  * which should make the former plain text and the latter emoji-style
  *
- * begins with Northward equinox, i.e. in classical European order of the signs of the Zodiac
+ * Cycle begins with Northward equinox, i.e. in classical European order of the signs of the Zodiac.
+ * Asian animal-zodiac has several local variants.
  *
  *   1. April     ♈ U+2648 Aries
  *   2. May       ♉ U+2649 Taurus
@@ -219,7 +220,7 @@
   system: cyclic;
   range: 1 12;
   symbols: '\2648' '\2649' '\264A' '\264B' '\264C' '\264D' '\264E' '\264F' '\2650'  '\2651' '\2652' '\2653';
-  suffix: '\FE0E'; /* variation selector VS-15 to ensure monochrome text symbols, not colorful emojis */
+  suffix: '\FE0E'; /* variation selector VS-15 to prefer monochrome text symbols over colorful emojis */
 }
 @counter-style zodiac {
   system: extends astrologic-months;
@@ -237,4 +238,318 @@
   range: 1 12;
   speak-as: words;
   symbols: 'Widder' 'Stier' 'Zwillinge' 'Krebs' 'Löwe' 'Jungfrau' 'Waage' 'Skorpion' 'Schütze' 'Steinbock' 'Wassermann' 'Fische';
+}
+
+/**
+ *  1. rat U+1F400/1F42D / mouse U+1F401
+ *  2. ox U+1F402 / water buffalo U+1F403 / cow U+1F404/1F42E
+ *  3. tiger U+1F405/1F42F / leopard U+1F406
+ *  4. rabbit U+1F407/1F430 / cat U+1F408/1F431
+ *  5. dragon U+1F409/1F432 / snail U+1F40C / crocodile U+1F40A / whale U+1F40B/1F433
+ *  6. snake U+1F40D
+ *  7. horse U+1F40E/1F434 (unicorn U+1F984)
+ *  8. ram U+1F40F / goat U+1F410 / sheep  U+1F411
+ *  9. monkey U+1F412/1F435
+ * 10. rooster U+1F413 / chicken U+1F414
+ * 11. dog U+1F415/1F436 (wolf U+1F43A)
+ * 12. pig U+1F416/1F437 / boar U+1F417 / elephant U+1F418
+ */
+/**
+ * U+1F400–18
+ * `animal-zodiac: =
+ * `chinese-zodiac`:    🐀 🐂 🐅 🐇 🐉 🐍 🐎 🐏 🐒 🐓 🐕 🐖
+ * `japanese-zodiac`:   🐀 🐂 🐅 🐇 🐉 🐍 🐎 🐏 🐒 🐓 🐕 🐗
+ * `thai-zodiac`:       🐀 🐂 🐅 🐇 🐉 🐍 🐎 🐏 🐒 🐓 🐕 🐘
+ * `kazakh-zodiac`:     🐀 🐂 🐅 🐇 🐌 🐍 🐎 🐏 🐒 🐓 🐕 🐖
+ * `vietnamese-zodiac`: 🐀 🐃 🐅 🐈 🐉 🐍 🐎 🐐 🐒 🐓 🐕 🐖
+ * `persian-zodiac`:    🐁 🐄 🐆 🐇 🐊 🐍 🐎 🐑 🐒 🐔 🐕 🐖
+ * `iranian-zodiac`:    🐁 🐄 🐆 🐇 🐋 🐍 🐎 🐑 🐒 🐔 🐕 🐖
+ * `
+ * U+1F42D–3C, U+1F414 Chicken, Snake, Sheep
+ *
+ * ### Facial unifications:
+ * - 🐭 = 🐀 / 🐁
+ * - 🐮 = 🐂 / 🐃 / 🐄
+ * - 🐲 = 🐉 / 🐊
+ * - 🐯 = 🐅 / 🐆
+ * - 🐔 = 🐓 / 🐔 (not explicitly a headshot)
+ * - no explicit face: snail, snake, sheep, elephant (chicken, boar, whale)
+ *
+ * `asian-zodiac`: =
+ * `facial-zodiac`:     🐭 🐮 🐯 🐰🐱 🐲🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷🐽
+ *                    + 🐸 🐹 🐺 🐻 🐼 + 🐙 🐧 🐦 🐤 🐣 🐥 🦄
+ *  🐭 🐮 🐯 🐰🐱 🐲🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
+ */
+@counter-style animal-zodiac {
+  system: cyclic;
+  /*range: 1 12;*/
+  symbols: '\1F400' '\1F402' '\1F405' '\1F407' '\1F409' '\1F40D' '\1F40E' '\1F40F' '\1F412' '\1F413' '\1F415' '\1F416';
+}
+@counter-style chinese-zodiac {
+  system: extends animal-zodiac;
+}
+@counter-style japanese-zodiac {
+  system: extends animal-zodiac;
+  symbols: '\1F400' '\1F402' '\1F405' '\1F407' '\1F409' '\1F40D' '\1F40E' '\1F40F' '\1F412' '\1F413' '\1F415' '\1F417';
+}
+@counter-style thai-zodiac {
+  system: extends animal-zodiac;
+  symbols: '\1F400' '\1F402' '\1F405' '\1F407' '\1F409' '\1F40D' '\1F40E' '\1F40F' '\1F412' '\1F413' '\1F415' '\1F418';
+}
+@counter-style kazakh-zodiac {
+  system: extends animal-zodiac;
+  symbols: '\1F400' '\1F402' '\1F405' '\1F407' '\1F40C' '\1F40D' '\1F40E' '\1F40F' '\1F412' '\1F413' '\1F415' '\1F416';
+}
+@counter-style vietnamese-zodiac {
+  system: extends animal-zodiac;
+  symbols: '\1F400' '\1F403' '\1F405' '\1F408' '\1F409' '\1F40D' '\1F40E' '\1F410' '\1F412' '\1F413' '\1F415' '\1F416';
+}
+@counter-style persian-zodiac {
+  system: extends animal-zodiac;
+  symbols: '\1F401' '\1F404' '\1F406' '\1F407' '\1F40A' '\1F40D' '\1F40E' '\1F411' '\1F412' '\1F414' '\1F415' '\1F416';
+}
+@counter-style iranian-zodiac {
+  system: extends persian-zodiac;
+  symbols: '\1F401' '\1F404' '\1F406' '\1F407' '\1F40B' '\1F40D' '\1F40E' '\1F411' '\1F412' '\1F414' '\1F415' '\1F416';
+}
+@counter-style facial-zodiac {
+  system: cyclic;
+/*
+cn 🐭 🐮 🐯 🐰 🐲 🐍 🐴 🐑 🐵 🐔 🐶 🐷
+jp 🐭 🐮 🐯 🐰 🐲 🐍 🐴 🐑 🐵 🐔 🐶 🐗
+th 🐭 🐮 🐯 🐰 🐲 🐍 🐴 🐑 🐵 🐔 🐶 🐘
+kz 🐭 🐮 🐯 🐰 🐌 🐍 🐴 🐑 🐵 🐔 🐶 🐷
+vn 🐭 🐮 🐯 🐱 🐲 🐍 🐴 🐑 🐵 🐔 🐶 🐷
+ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
+*/
+  /*range: 1 12;*/
+  symbols: '\1F42D' '\1F42E' '\1F42F' '\1F430' '\1F432' '\1F40D' '\1F434' '\1F411' '\1F435' '\1F414' '\1F436' '\1F437';
+}
+@counter-style asian-zodiac {
+  system: extends facial-zodiac;
+}
+
+/**
+ * Mathematics
+ * -----------
+ */
+
+/**
+ * `prime`
+ *
+ * The 168 prime numbers below 1000
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style prime {
+  system: fixed;
+  range: 1 168;
+  symbols: '2' '3' '5' '7' '11' '13' '17' '19' '23' '29' '31' '37' '41' '43' '47' '53' '59' '61' '67' '71' '73' '79' '83' '89' '97'
+           '101' '103' '107' '109' '113' '127' '131' '137' '139' '149' '151' '157' '163' '167' '173' '179' '181' '191' '193' '197' '199'
+           '211' '223' '227' '229' '233' '239' '241' '251' '257' '263' '269' '271' '277' '281' '283' '293'
+           '307' '311' '313' '317' '331' '337' '347' '349' '353' '359' '367' '373' '379' '383' '389' '397'
+           '401' '409' '419' '421' '431' '433' '439' '443' '449' '457' '461' '463' '467' '479' '487' '491' '499'
+           '503' '509' '521' '523' '541' '547' '557' '563' '569' '571' '577' '587' '593' '599'
+           '601' '607' '613' '617' '619' '631' '641' '643' '647' '653' '659' '661' '673' '677' '683' '691'
+           '701' '709' '719' '727' '733' '739' '743' '751' '757' '761' '769' '773' '787' '797'
+           '809' '811' '821' '823' '827' '829' '839' '853' '857' '859' '863' '877' '881' '883' '887'
+           '907' '911' '919' '929' '937' '941' '947' '953' '967' '971' '977' '983' '991' '997';
+}
+/**
+ * `fibonacci`
+ *
+ * The 16 Fibonacci numbers below 1000
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style fibonacci {
+  system: fixed;
+  range: 1 16;
+  symbols: '1'  '1'  '2'  '3'  '5'  '8'
+           '13' '21' '34' '55' '89' '144'
+           '233' '377' '610' '987';
+}
+
+/**
+ * `pi`
+ *
+ * The first 12 digits of π
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style pi {
+  system: fixed;
+  range: 1 11;
+  symbols: '3' '3.1' '3.14' '3.141' '3.1415' '3.14159' '3.141592' '3.1415926' '3.14159265' '3.141592653' '3.1415926536';
+}
+
+/**
+ * `tau`
+ *
+ * The first 12 digits of #tau (half-π)
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style tau {
+  system: fixed;
+  range: 1 11;
+  symbols: '1' '1.5' '1.57' '1.570' '1.5707' '1.57079' '1.570796' '1.5707963' '1.57079632' '1.570796326' '1.5707963268';
+}
+
+/**
+ * `phi`
+ *
+ * The first 12 digits of #phi (golden ratio)
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style phi {
+  system: fixed;
+  range: 1 13;
+  symbols: '1' '1.6' '1.61' '1.618' '1.6180' '1.61803' '1.618033' '1.6180339' '1.61803398' '1.618033988' '1.6180339887' '1.61803398874' '1.618033988749';
+}
+
+/**
+ * `sqrt2`
+ *
+ * The first 12 digits of √2
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style sqrt2 {
+  system: fixed;
+  range: 1 10;
+  symbols: '1' '1.4' '1.41' '1.414' '1.4142' '1.41421' '1.414213' '1.4142135' '1.41421356' '1.414213562';
+}
+
+/**
+ * `seventh`
+ *
+ * The repeating digits of 1/7
+ */
+@counter-style sqrt2 {
+  system: cyclic;
+  symbols: '1' '4' '2' '8' '5' '7';
+}
+/**
+ * `oneseventh`
+ *
+ * The repeating digits of 1/7
+ */
+@counter-style sqrt2 {
+  system: additive;
+  additive-symbols: 6 '142857', 5 '14285', 4 '1428', 3 '142', 2 '14', 1 '1', 0 '…';
+  prefix: '0.';
+}
+/**
+ * `thirteenth`
+ *
+ * The repeating digits 1/13
+ */
+@counter-style sqrt2 {
+  system: cyclic;
+  symbols: '0' '7' '6' '9' '2' '3';
+}
+/**
+ * `thirteenth`
+ *
+ * The repeating digits 1/13
+ */
+@counter-style sqrt2 {
+  system: additive;
+  additive-symbols: 6 '076923', 5 '07692', 4 '0769', 3 '076', 2 '07', 1 '0', 0 '…';
+  prefix: '0.';
+}
+
+/**
+ * `euler`
+ *
+ * The first 12 digits of Euler’s constant e
+ *
+ * @issue could have an arbitrary number of additional values
+ */
+@counter-style fibonacci {
+  system: fixed;
+  range: 1 12;
+  symbols: '2';
+}
+
+/**
+ * Geography
+ * ---------
+ */
+
+/**
+ * `compass-bearings`
+ * 4 steps, North-start, Clockwise
+ *
+ * > 🔼 ▶️ 🔽 ◀️ 	U+1F53C/D U+25B6/C0
+ * > ▲ ▶ ▼ ◀ 	U+25B2/B6/BC/C0
+ * > △ ▷ ▽ ◁ 	U+25B3/B7/BD/C1
+ * > ▴ ▸ ▾ ◂ 	U+25B4/B8/BE/C2
+ * > ▵ ▹ ▿ ◃ 	U+25B5/B9/BF/C3
+ * > ? ➢ ⧨ ? 	U+?/27A20/29E8/?
+ * > ? ➣ ⧩ ? 	U+?/27A30/29E9/?
+ * @issue proper symbols?
+ */
+@counter-style compass-bearings {
+  system: cyclic;
+  speak-as: compass-bearings-english;
+  symbols: '\1F53C' '\25B6\FE0F' '\1F53D' '\25C0\FE0F';
+ /* '\25B2' '\25B6' '\25BC' '\25C0' */
+ /* '\25B3' '\25B7' '\25BD' '\25C1' */
+ /* '\25B4' '\25B8' '\25BE' '\25C2' */
+ /* '\25B5' '\25B9' '\25BF' '\25C3' */
+}
+
+/**
+ * `compass-bearings-detail`
+ * 8 steps, North-start, Clockwise
+ *
+ * > 🔼 ◥ ▶ ◢️ 🔽 ◣ ◀️ ◤ 	U+1F53C/25E5/25B6/25E2/1F53D/25E3/25C0/25E4
+ * > ▵ ◹ ▹ ◿ ▿ ◺ ◃ ◸ 	U+25B5/F9/B9/FF/BF/FA/C3/F8
+ * @issue proper symbols?
+ */
+@counter-style compass-bearings-detail {
+  system: cyclic;
+  speak-as: compass-bearings-english-detail;
+  symbols: '\1F53C' '\25E5\FE0F' '\25B6\FE0F' '\25E2\FE0F' '\1F53D' '\25E3\FE0F' '\25C0\FE0F' '\25E4\FE0F';
+  /* symbols: '25B5' '\25F9' '\25B9' '\25FF' '\25BF' '\25FA' '\25C3' '\25F8'; */
+}
+
+/**
+ * `compass-bearings-english-letter`
+ * 4 steps, North-start, Clockwise
+ *
+ * > N E S W
+ * @issue more steps?
+ */
+@counter-style compass-bearings-english-letter {
+  system: cyclic;
+  speak-as: compass-bearings-english;
+  symbols: 'N' 'E' 'S' 'W';
+}
+
+/**
+ * `compass-bearings-english`
+ * 4 steps, North-start, Clockwise
+ *
+ * > North East South West
+ */
+@counter-style compass-bearings-english {
+  system: cyclic;
+  speak-as: words;
+  symbols: 'North' 'East' 'South' 'West';
+}
+
+/**
+ * `compass-bearings-english-detail`
+ * 4 steps, North-start, Clockwise
+ *
+ * > North North-East East South-East South South-West West North-West
+ */
+@counter-style compass-bearings-english-detail {
+  system: cyclic;
+  speak-as: words;
+  symbols: 'North' 'North-East' 'East' 'South-East' 'South' 'South-West' 'West' 'North-West';
 }
