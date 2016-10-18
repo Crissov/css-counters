@@ -78,3 +78,16 @@
                      9 '\1D368',  8 '\1D367',  7 '\1D366',  6 '\1D365',
                      5 '\1D364',  4 '\1D363',  3 '\1D362',  2 '\1D361',  1 '\1D360';
 }
+/**
+ * `tally-marks`
+ *
+ * > Ones:  &#x1D377; TALLY MARK ONE
+ * > Fives: &#x1D378; TALLY MARK FIVE
+ *
+ * @issue Proposed and approved for inclusion in Unicode 10.0 (2017) or later
+ *        [L2/16-065](http://www.unicode.org/L2/L2016/16065-tally-marks.pdf)
+ */
+@counter-style tally-marks {
+  system: additive;
+  additive-symbols: 5 '\1D364 ',  1 '\1D360';
+}
