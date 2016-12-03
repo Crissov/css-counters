@@ -386,7 +386,7 @@ ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
 /**
  * `tau`
  *
- * The first 12 digits of #tau (half-π)
+ * The first 12 digits of τ (half-π)
  *
  * @issue could have an arbitrary number of additional values
  */
@@ -399,7 +399,7 @@ ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
 /**
  * `phi`
  *
- * The first 12 digits of #phi (golden ratio)
+ * The first 12 digits of φ (golden ratio)
  *
  * @issue could have an arbitrary number of additional values
  */
@@ -427,7 +427,7 @@ ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
  *
  * The repeating digits of 1/7
  */
-@counter-style sqrt2 {
+@counter-style seventh {
   system: cyclic;
   symbols: '1' '4' '2' '8' '5' '7';
 }
@@ -436,7 +436,7 @@ ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
  *
  * The repeating digits of 1/7
  */
-@counter-style sqrt2 {
+@counter-style oneseventh {
   system: additive;
   additive-symbols: 6 '142857', 5 '14285', 4 '1428', 3 '142', 2 '14', 1 '1', 0 '…';
   prefix: '0.';
@@ -446,16 +446,16 @@ ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
  *
  * The repeating digits 1/13
  */
-@counter-style sqrt2 {
+@counter-style thirteenth {
   system: cyclic;
   symbols: '0' '7' '6' '9' '2' '3';
 }
 /**
- * `thirteenth`
+ * `onethirteenth`
  *
  * The repeating digits 1/13
  */
-@counter-style sqrt2 {
+@counter-style onethirteenth {
   system: additive;
   additive-symbols: 6 '076923', 5 '07692', 4 '0769', 3 '076', 2 '07', 1 '0', 0 '…';
   prefix: '0.';
@@ -468,10 +468,10 @@ ir 🐭 🐮 🐯 🐰 🐳 🐍 🐴 🐑 🐵 🐔 🐶 🐷
  *
  * @issue could have an arbitrary number of additional values
  */
-@counter-style fibonacci {
+@counter-style euler {
   system: fixed;
   range: 1 12;
-  symbols: '2';
+  symbols: '2' /*missing*/;
 }
 
 /**
